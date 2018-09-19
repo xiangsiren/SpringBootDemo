@@ -1,5 +1,4 @@
 FROM ubuntu:16.04
-MAINTAINER modian(1050215723@qq.com)
 ARG app
 ARG jdkdir
 ADD $jdkdir /usr/local/jdk8
