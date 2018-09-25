@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: maven01-service
+spec:
+  type: NodePort
+  ports:
+  - name: maven01
+    port: 19090
+    targetPort: 8080
+    protocol: TCP
+  selector:
+    app: maven01
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: maven01-deployment
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: maven01
+    spec:
+      containers:
+        - name: maven01
+          image: registry-scu.cloudtogo.cn/maven01:latest
+          ports:
+          - containerPort: 8080
+          env:
+            - name: key
+              value: "value"
