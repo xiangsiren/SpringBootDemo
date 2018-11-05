@@ -8,6 +8,7 @@ spec:
   - name: maven
     port: 8080
     nodePort: 31002
+    targetPort: 8080
     protocol: TCP
   selector:
     app: maven
