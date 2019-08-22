@@ -28,5 +28,10 @@ public class IndexController {
         logger.info("result msg: {}", jsonObject.toJSONString());
         return jsonObject;
     }
+    @GetMapping("/hello")
+    public String hello(){
+    
+      return "hellod muron";
+    }
 
 }
