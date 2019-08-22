@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: maven-service
+  name: renren-service
 spec:
   type: NodePort
   ports:
