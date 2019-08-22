@@ -5,13 +5,13 @@ metadata:
 spec:
   type: NodePort
   ports:
-  - name: maven
+  - name: renren
     port: 8080
     nodePort: 31002
     targetPort: 8080
     protocol: TCP
   selector:
-    app: maven
+    app: renren
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
@@ -22,11 +22,11 @@ spec:
   template:
     metadata:
       labels:
-        app: maven
+        app: renren
     spec:
       containers:
-        - name: maven
-          image: 127.0.0.1:8089/test/maven:latest
+        - name: renren
+          image: 127.0.0.1:8089/test/renren:latest
           ports:
           - containerPort: 8080
           env:
